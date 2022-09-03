@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff&display=swap');
+
+ 
+
+* {
+    box-sizing: border-box;
+
+    :first-child { margin-top: 0 !important; margin-left: 0 !important; }
+    :last-child { margin-bottom: 0 !important; margin-right: 0 !important; }
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: normal;
+    width: 100%;
+    min-height: 10vh;
+    font-family: 'DynaPuff', cursive;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    font-size: 25px;
+    text-transform: capitalize;
+    padding: 2%;
+    color: #0078bf;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+
+    .container {
+        position: relative;
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            position: fixed;
+            top: 0;
+            right: 0;
+            height: 15%;
+            width: 30%;
+            padding: 1%;
+            background: #0675BB;
+            border: 5px solid white;
+            border-right: none;
+            border-bottom-left-radius: 40px;
+            border-top-left-radius: 40px;
+            z-index: 5;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .item {
+                position: relative;
+                min-width: 50px;
+                height: 50px;
+                background: #0675BB;
+                border: 4px solid white;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                svg {
+                    position: relative;
+                    width: 50%;
+                    height: 50%;
+                    fill: white;
+
+                    &:hover {
+                        fill: #E94589;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        
+        .video {
+            object-fit: fill;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 100vw;
+                min-height: 20%;
+                position: absolute;
+                bottom: 0;
+                background-image: url("https://br.peppapig.com/wp-content/themes/peppapig/images/layout/dividers/divider-02-white-no-line.png");
+                background-size: 100% 100%;
+                z-index: 2;
+            }
+
+            img {
+                position: absolute;
+                padding: 1%;
+            }
+        }
+
+        .slider {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 1vh;
+            width: 100vw;
+            overflow: hidden;
+
+                .button {
+                    position: relative;
+                    width: 500px;
+                    min-height: 100%;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: flex-end;
+                    justify-content: center;
+                    color: white;
+                    background: rgba(169, 169, 169, 0.375);
+
+                    &:hover {
+                        background: rgba(169, 169, 169, 0.59);
+                        transition: all 0.2s ease-in-out;
+                    }
+                    
+            }
+
+            &_slides {
+                position: relative;
+                display: flex;
+                width: 100vw;
+                min-height: auto;
+
+                .slide {
+                    position: relative;
+                    background: cyan;
+                    min-width: 30vw;
+                    height: 100%;
+                    transform-style: preserve-3d;
+                    background: url(https://br.peppapig.com/wp-content/uploads/sites/8/2019/03/episode_still_3.png);
+                    background-repeat:no-repeat;
+                    background-size: 100% 100%;
+                    margin-right: 5%;
+
+                    img {
+                        min-width: 100%;
+                        min-height: 100%;
+                        position: relative;
+                        display: inline-block;
+                    }
+
+                    &.active {
+                        filter: grayscale(0);
+                    }
+                }                
+            }
+
+            .counter {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                min-height: 20vh;
+
+                &__wrapper {
+                    min-width: 20vw;
+                    min-height: 5vh;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+
+                    .--active {
+                        transform: scale(1.5);
+                    }
+
+                    &__item {
+                        height: 3vh;
+                        width: 3vh;
+                        background: rgb(207,42,186);
+                        border-radius: 50%;;
+                        position: relative;
+                    }
+                }
+            }
+        }
+
+        .brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+
+
+            img {
+                height: 90%;
+                padding: 1%;
+            }
+            
+            .divisor {
+                width: 5px;
+                height: 100%;
+                background: blue;
+            }
+        }
+
+        .characters {
+            width: 100%;
+            min-height: 100vh;
+            padding: 15%;
+            position: relative;
+            background: url("img/characterbg.png");
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:before {
+                content: "";
+                width: 100vw;
+                min-height: 20%;
+                top: 0;
+                position: absolute;
+                background-image: url("img/divisor-top.png");
+                background-size: 100% 100%;
+            }
+
+            .title {
+                color: white;
+            }
+        }
+
+        .footer {
+            width: 100%;
+            min-height: 100vh;
+            position: relative;
+
+            &:before {
+                content: "";
+                width: 100vw;
+                min-height: 12%;
+                top: -12%;
+                position: absolute;
+                background-image: url("img/divisor-top-sky.png");
+                background-size: 70% 100%;
+            }
+
+            .back-to-top {
+                position: absolute;
+                right: 5vw;
+                bottom: 70vh;
+                width: 112px;
+                height: 244px;
+                background: url("img/toTheTop.png");
+                background-size: 100% 100%;
+                z-index: 5;
+            }
+
+            .boat-animation {
+                width: 100%;
+                height: 130vh;
+                background-image: url("img/footerbg.png");
+                background-position: center;
+                background-size: cover;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 50%;
+                    height: auto;
+                    animation: floating 1s alternate-reverse infinite;
+                }
+            }
+    
+            footer {
+                width: 100%;
+                min-height: 35vh;
+                padding: 10%;
+                background: #225CA7;
+                color: white;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                justify-content: baseline;
+                font-family: 'DynaPuff', cursive;
+                
+                ul {
+                    font-size: 20px;
+                    li {
+                        display: inline-block;
+                        letter-spacing: 2px;
+                        word-spacing: 1px;
+                        margin-left: 1%;
+
+                        ::before {
+                            content: "";
+                            width: 1px;
+                            height: 1px;
+                            position: relative;
+                            background: red;
+                        }
+                    }
+                }
+
+                p {
+                    font-weight: 100 !important;
+                }
+            }
+        }
+        }
+
+
+}
+
+@keyframes floating {
+    from {
+        transform: translateY(0);
+    }
+
+    to {transform: translateY(2%)}
+}
+
+@media only screen and (max-width: 900px) {
+    .brand {
+         min-height: 50vh;
+        
+        img {
+            width: 50% !important;
+            height: auto !important;
+        }
+    }
+
+    
+
+    .video {
+        img {
+            margin-left: 1% !important;
+        }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .boat-animation {
+        img {
+            position: relative;
+            top: 10% !important;
+        }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .boat-animation {
+        height: 100vh !important;
+        img {
+            position: relative;
+            top: 20% !important;
+        }
+    }
+  }
